@@ -4,14 +4,14 @@ const activeCtrl = require('../../../models/rc_active');
 const codesCtrl = require('../../../models/rc_codes');
 const logUtil = require('../../../utils/logUtil');
 const apiUtil = require('../../../utils/apiUtil');
-import {
-   resdata, errdata
-} from '../../../utils/serve';
+const errdata = require('../../../utils/serve').errdata();
+const resdata = require('../../../utils/serve').resdata();
 
 /**
  * 激活遥看设备
  */
 exports.active = async (data) => {
+    console.log("===========+++++++++++++++++++++")
     let req = JSON.parse(data);
     let dataArr = {
         username: req.username,
